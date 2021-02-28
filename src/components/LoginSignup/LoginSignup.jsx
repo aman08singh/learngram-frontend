@@ -214,7 +214,7 @@ export default function LoginSignup() {
                     registerSuccess ? credentials.otp : credentials.password
                   }
                 />
-                {credentials.password && activeTab === "signup" && (
+                {(credentials.password && activeTab === "signup" && !submitted.signup) && (
                   <div className="password-validation-box rounded">
                     <div className="min-eight-chars">
                       <ValidationTexts

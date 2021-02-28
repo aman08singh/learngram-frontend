@@ -2,15 +2,13 @@ import axios from "axios";
 import { GET_ERRORS, SET_VIDEO_UPLOAD_SUCCESS } from "./types";
 import { setCurrentUser } from "./loginAction";
 import { eraseCookie } from "../../utils/Cookie";
+import { VIDEO_UPLOAD } from "../../endpoints";
 
 import setAuthToken from "../../utils/setAuthToken";
 
 export const videoUpload = (userData) => (dispatch) => {
   axios
-    .post(
-      "http://frontend-assignment.learngram.ai/api/v1/video/upload",
-      userData
-    )
+    .post(VIDEO_UPLOAD, userData)
     .then((res) => {
       dispatch(setVideoUploadSuccess(res.data));
     })

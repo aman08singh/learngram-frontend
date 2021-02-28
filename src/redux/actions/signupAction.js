@@ -1,12 +1,10 @@
 import axios from "axios";
 import { GET_ERRORS, SET_SIGNUP_SUCCESS } from "./types";
+import { USER_SIGNUP } from "../../endpoints";
 
 export const signupUser = (userData) => (dispatch) => {
   axios
-    .post(
-      "http://frontend-assignment.learngram.ai/api/v1/user/signup",
-      userData
-    )
+    .post(USER_SIGNUP, userData)
     .then((res) => {})
     .catch((err) => {
       dispatch(setSignupError(err.response.data));

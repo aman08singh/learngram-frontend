@@ -1,12 +1,13 @@
 import axios from "axios";
 import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 import { setCookie } from "../../utils/Cookie";
+import { USER_LOGIN } from "../../endpoints";
 
 import setAuthToken from "../../utils/setAuthToken";
 
 export const loginUser = (userData) => (dispatch) => {
   axios
-    .post("http://frontend-assignment.learngram.ai/api/v1/user/login", userData)
+    .post(USER_LOGIN, userData)
     .then((res) => {
       const { jwt } = res.data;
       const { user } = res.data;

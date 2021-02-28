@@ -1,0 +1,77 @@
+.header-title {
+  color: #4b5ef4;
+  font-size: xxx-large;
+  font-weight: bold;
+  margin-left: 5rem;
+}
+
+.file-input-field {
+  border: 1px solid #4b5ef4;
+  width: inherit;
+}
+
+.upload-button {
+  background-color: #4b5ef4;
+  margin-left: 1rem;
+}
+
+.video-search-input-div {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.video-search-input-div:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  width: 20px;
+  background: url("../../assets/icons/search.svg") center / contain no-repeat;
+  transform: translateY(-50%);
+  right: 2rem;
+}
+
+.video-search-input-div > input {
+  padding: 0.5rem 3.5rem 0.5rem 0;
+}
+
+.video-search-input {
+  width: 100%;
+}
+
+.logout-button {
+  float: right;
+  background-color: #4b5ef4;
+}
+
+.video-feature {
+  min-width: 100%;
+}
+
+.video-feature-title-div {
+  margin: 1rem 0;
+  min-width: 100%;
+}
+.video-feature-title {
+  color: #4b5ef4;
+  font-size: xxx-large;
+}
+
+.upload-file-logout-row {
+  margin: 2rem 0 3rem 0;
+}
+
+.video-div-column {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .logout-button,
+  .upload-button {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .upload-button {
+    margin-left: 0;
+  }
+}

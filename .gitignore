@@ -11,6 +11,9 @@
 # production
 /build
 
+#endpoints
+/src/endpoints.js
+
 # misc
 .DS_Store
 .env.local

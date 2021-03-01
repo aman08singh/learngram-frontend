@@ -6,11 +6,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Create a file in src with name as endpoints.js, and add the following endpoints.
 
-export const LIST_VIDEOS = "GET_ALL_VIDEOS_ENDPOINT";
-export const USER_LOGIN = "USER_LOGIN_ENDPOINT";
-export const VERIFY_OTP = "VERIFY_OTP_ENDPOINT";
-export const USER_SIGNUP = "USER_SIGNUP_ENDPOINT";
-export const VIDEO_UPLOAD = "VIDEO_UPLOAD_ENDPOINT";
+export const LIST_VIDEOS = "GET_ALL_VIDEOS_ENDPOINT";\
+export const USER_LOGIN = "USER_LOGIN_ENDPOINT";\
+export const VERIFY_OTP = "VERIFY_OTP_ENDPOINT";\
+export const USER_SIGNUP = "USER_SIGNUP_ENDPOINT";\
+export const VIDEO_UPLOAD = "VIDEO_UPLOAD_ENDPOINT";\
 
 ## Available Scripts
 

@@ -57,8 +57,10 @@ export default function LoginSignup() {
   useEffect(() => {
     if (
       submitted.signup &&
-      reduxState.auth.registrationSuccess.message ===
-        "User created successfully. OTP sent to your email."
+      (reduxState.auth.registrationSuccess.message ===
+        "User created successfully. OTP sent to your email." ||
+        reduxState.auth.registrationSuccess.message ===
+          "User already exists. OTP sent to your email.")
     ) {
       alert(reduxState.auth.registrationSuccess.message);
       setRegisterSuccess(true);
@@ -214,46 +216,52 @@ export default function LoginSignup() {
                     registerSuccess ? credentials.otp : credentials.password
                   }
                 />
-                {(credentials.password && activeTab === "signup" && !submitted.signup) && (
-                  <div className="password-validation-box rounded">
-                    <div className="min-eight-chars">
-                      <ValidationTexts
-                        src={
-                          checkPasswordValidation("eightChars") ? Tick : Close
-                        }
-                        alt="eightChars-close-svg"
-                        text="Password should be min 8 chars"
-                      />
+                {credentials.password &&
+                  activeTab === "signup" &&
+                  !submitted.signup && (
+                    <div className="password-validation-box rounded">
+                      <div className="min-eight-chars">
+                        <ValidationTexts
+                          src={
+                            checkPasswordValidation("eightChars") ? Tick : Close
+                          }
+                          alt="eightChars-close-svg"
+                          text="Password should be min 8 chars"
+                        />
+                      </div>
+                      <div className="one-uppercase-letter">
+                        <ValidationTexts
+                          src={
+                            checkPasswordValidation("oneUppercase")
+                              ? Tick
+                              : Close
+                          }
+                          alt="oneUppercase-close-svg"
+                          text="At least 1 uppercase letter [A-Z]"
+                        />
+                      </div>
+                      <div className="one-lowercase-letter">
+                        <ValidationTexts
+                          src={
+                            checkPasswordValidation("oneLowercase")
+                              ? Tick
+                              : Close
+                          }
+                          alt="oneLowercase-close-svg"
+                          text="At least 1 lowercase letter [a-z]"
+                        />
+                      </div>
+                      <div className="one-numeric-char">
+                        <ValidationTexts
+                          src={
+                            checkPasswordValidation("oneNumeric") ? Tick : Close
+                          }
+                          alt="oneNumeric-close-svg"
+                          text="At least 1 numeric letter [0-9]"
+                        />
+                      </div>
                     </div>
-                    <div className="one-uppercase-letter">
-                      <ValidationTexts
-                        src={
-                          checkPasswordValidation("oneUppercase") ? Tick : Close
-                        }
-                        alt="oneUppercase-close-svg"
-                        text="At least 1 uppercase letter [A-Z]"
-                      />
-                    </div>
-                    <div className="one-lowercase-letter">
-                      <ValidationTexts
-                        src={
-                          checkPasswordValidation("oneLowercase") ? Tick : Close
-                        }
-                        alt="oneLowercase-close-svg"
-                        text="At least 1 lowercase letter [a-z]"
-                      />
-                    </div>
-                    <div className="one-numeric-char">
-                      <ValidationTexts
-                        src={
-                          checkPasswordValidation("oneNumeric") ? Tick : Close
-                        }
-                        alt="oneNumeric-close-svg"
-                        text="At least 1 numeric letter [0-9]"
-                      />
-                    </div>
-                  </div>
-                )}
+                  )}
               </div>
               <div className="loginsignup-button text-center">
                 <button

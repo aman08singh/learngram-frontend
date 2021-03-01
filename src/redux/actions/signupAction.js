@@ -5,7 +5,9 @@ import { USER_SIGNUP } from "../../endpoints";
 export const signupUser = (userData) => (dispatch) => {
   axios
     .post(USER_SIGNUP, userData)
-    .then((res) => {})
+    .then((res) => {
+      dispatch(setSignupSuccess(res.data));
+    })
     .catch((err) => {
       dispatch(setSignupError(err.response.data));
     });
